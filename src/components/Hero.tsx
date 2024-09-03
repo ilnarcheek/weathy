@@ -4,8 +4,8 @@ import DateTime from "./DateTime";
 
 const StyledHero = styled.div`
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0)),
-    url("src/assets/pics/city_placeholder.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5) 35%, rgba(0, 0, 0, 0)),
+    url("assets/pics/city.jpg");
   background-size: cover;
   background-position: center;
   border-radius: var(--border-radius-m);

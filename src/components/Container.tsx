@@ -43,7 +43,7 @@ export default function Container() {
       console.log(lat, lng, zoneName);
       dispatch(fetchWeather({ lat, lng, zoneName }));
     }
-  }, [zoneName, dispatch]);
+  }, [lat, lng, zoneName, dispatch]);
 
   return (
     <StyledContainer>

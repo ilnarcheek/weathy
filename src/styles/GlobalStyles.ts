@@ -1,9 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 import "normalize.css";
 
-import RubikBold from "./../assets/fonts/Rubik-Bold.ttf";
-import RubikRegular from "./../assets/fonts/Rubik-Regular.ttf";
-import RubikLight from "./../assets/fonts/Rubik-Light.ttf";
+import RubikBold from "/assets/fonts/Rubik-Bold.ttf";
+import RubikRegular from "/assets/fonts/Rubik-Regular.ttf";
+import RubikLight from "/assets/fonts/Rubik-Light.ttf";
 
 const GlobalStyle = createGlobalStyle`
 
