@@ -15,6 +15,10 @@ const Speed = styled.span`
 `;
 const Direction = styled.span`
   text-transform: uppercase;
+
+  @media (max-width: 730px) {
+    font-size: var(--font-size-s);
+  }
 `;
 
 export default function CurrentWind() {

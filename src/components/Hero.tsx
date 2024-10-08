@@ -16,6 +16,26 @@ const StyledHero = styled.div`
   align-items: start;
   justify-content: space-between;
   padding: 1.5rem 2rem;
+
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+
+  @media (max-width: 860px) {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+  }
+
+  @media (max-width: 660px) {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+  }
+
+  @media (max-width: 530px) {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+
+    border-radius: 0;
+  }
 `;
 
 export default function Hero() {

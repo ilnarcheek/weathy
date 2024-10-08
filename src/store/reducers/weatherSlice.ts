@@ -49,6 +49,8 @@ export const fetchWeather = createAsyncThunk(
   "weather/fetchWeatherInfo",
   async ({ lat, lng, zoneName }: FetchLocation, thunkAPI) => {
     try {
+      // await new Promise((res) => setTimeout(res, 10000));
+
       const res = await axios.get(
         `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current=temperature_2m,relative_humidity_2m,surface_pressure,wind_speed_10m,wind_direction_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m,wind_direction_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset,wind_speed_10m_max,wind_direction_10m_dominant&wind_speed_unit=ms&timezone=${zoneName}`
       );
@@ -67,12 +69,14 @@ export const weatherSlice = createSlice({
     builder
       .addCase(fetchWeather.pending.type, (state) => {
         state.isLoading = true;
+        console.log("start loading");
       })
       .addCase(
         fetchWeather.fulfilled.type,
         (state, action: PayloadAction<IWeather>) => {
           state.isLoading = false;
           state.weather = action.payload;
+          console.log("finish loading");
         }
       )
       .addCase(

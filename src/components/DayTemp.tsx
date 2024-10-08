@@ -39,15 +39,16 @@ const Temp = styled.span`
 `;
 
 export default function DayTemp({ data }: DayTempProps) {
-  const icon = dayWeatherIcon(data.code);
+  const { deg, date, code } = data;
+  const icon = dayWeatherIcon(code);
 
   return (
     <Day>
-      <DayOfWeek>{data.date}</DayOfWeek>
+      <DayOfWeek>{date}</DayOfWeek>
       <IconContext.Provider value={{ size: "4rem", color: mainColor }}>
         {icon}
       </IconContext.Provider>
-      <Temp>{data.deg}&deg;</Temp>
+      <Temp>{deg}</Temp>
     </Day>
   );
 }

@@ -21,6 +21,22 @@ const Day = styled.div`
   &:last-child {
     border: none;
   }
+
+  @media (max-width: 860px) {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--secondary-font-color);
+  }
+
+  @media (max-width: 660px) {
+    width: 100%;
+    border-bottom: none;
+    border-right: 1px solid var(--secondary-font-color);
+  }
+
+  @media (max-width: 530px) {
+    gap: 0;
+  }
 `;
 
 const DayOfWeek = styled.span`
@@ -31,6 +47,14 @@ const DayOfWeek = styled.span`
 const Speed = styled.span`
   font-size: var(--font-size-l);
   font-weight: 700;
+
+  @media (max-width: 860px) {
+    font-size: var(--font-size-m);
+  }
+
+  @media (max-width: 660px) {
+    font-size: var(--font-size-l);
+  }
 `;
 
 const Direction = styled.span`

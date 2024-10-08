@@ -6,6 +6,14 @@ const StyledTime = styled.span`
   font-size: var(--font-size-xl);
   font-weight: 400;
   text-align: end;
+
+  @media (max-width: 1024px) {
+    font-size: 5rem;
+  }
+
+  @media (max-width: 660px) {
+    font-size: 4rem;
+  }
 `;
 
 export default function Time() {

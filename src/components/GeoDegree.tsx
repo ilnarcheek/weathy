@@ -12,11 +12,27 @@ const Container = styled.div`
 
 const Geo = styled.span`
   font-size: var(--font-size-l);
+
+  @media (max-width: 1024px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 660px) {
+    font-size: 2rem;
+  }
 `;
 
 const Degree = styled.span`
   font-size: var(--font-size-xxl);
   font-weight: 300;
+
+  @media (max-width: 1024px) {
+    font-size: 10rem;
+  }
+
+  @media (max-width: 660px) {
+    font-size: 7rem;
+  }
 `;
 
 export default function GeoDegree() {

@@ -9,6 +9,16 @@ const StyledWindForecast = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 2rem;
+
+  @media (max-width: 860px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 660px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 export default function WindForecast() {

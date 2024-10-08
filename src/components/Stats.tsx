@@ -12,6 +12,30 @@ const StyledStats = styled.div`
   background-color: var(--light-color);
   border-radius: var(--border-radius-m);
   box-shadow: var(--box-shadov-s);
+
+  grid-row: 2 / 3;
+
+  @media (max-width: 860px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+
+    grid-row: 1 / 2;
+  }
+
+  @media (max-width: 660px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+
+  @media (max-width: 530px) {
+    grid-row: 2 / 3;
+    grid-column: 1 / -1;
+
+    margin: 0 2rem;
+  }
 `;
 
 export default function Stats() {

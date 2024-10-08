@@ -10,6 +10,22 @@ import { useAppSelector } from "../store/hooks";
 import { mainColor } from "../utils/constants";
 import CustomTooltip from "./CustomTooltip";
 import { filterWeatherData } from "../utils/helpers";
+import styled from "styled-components";
+
+const ScrollContainer = styled.div`
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
+`;
+
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+  @media (max-width: 530px) {
+    width: 50rem;
+  }
+`;
 
 export default function TempGraph() {
   const { weather } = useAppSelector((state) => state.weather);
@@ -56,31 +72,35 @@ export default function TempGraph() {
     });
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <AreaChart
-        data={data}
-        margin={{ top: 20, right: 20, left: 20, bottom: 0 }}
-      >
-        <Area
-          fill={`${mainColor}`}
-          type="monotone"
-          dataKey="deg"
-          dot={{ stroke: mainColor, strokeWidth: 2 }}
-        >
-          <LabelList
-            dataKey="deg"
-            position="top"
-            style={{ fontSize: "1.4rem" }}
-          />
-        </Area>
-        <XAxis
-          dataKey="date"
-          style={{
-            fontSize: "1.4rem",
-          }}
-        />
-        <Tooltip content={<CustomTooltip />} />
-      </AreaChart>
-    </ResponsiveContainer>
+    <ScrollContainer>
+      <Container>
+        <ResponsiveContainer height="100%" width="100%">
+          <AreaChart
+            data={data}
+            margin={{ top: 20, right: 20, left: 20, bottom: 0 }}
+          >
+            <Area
+              fill={`${mainColor}`}
+              type="monotone"
+              dataKey="deg"
+              dot={{ stroke: mainColor, strokeWidth: 2 }}
+            >
+              <LabelList
+                dataKey="deg"
+                position="top"
+                style={{ fontSize: "1.4rem" }}
+              />
+            </Area>
+            <XAxis
+              dataKey="date"
+              style={{
+                fontSize: "1.4rem",
+              }}
+            />
+            <Tooltip content={<CustomTooltip />} />
+          </AreaChart>
+        </ResponsiveContainer>
+      </Container>
+    </ScrollContainer>
   );
 }

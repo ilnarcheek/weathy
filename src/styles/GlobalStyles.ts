@@ -56,7 +56,22 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%; 
     scroll-behavior: smooth;
+  
+    @media (max-width: 1024px) {
+        font-size: 58%;
+    }
 
+    @media (max-width: 920px) {
+        font-size: 55%;
+    }
+
+    @media (max-width: 760px) {
+        font-size: 53%;
+    }
+
+    @media (max-width: 660px) {
+      /* font-size: 62.5%; */
+    }
   }
 
   body {
@@ -64,7 +79,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.6;
     font-size: var(--font-size-m);
     color: var(--primary-font-color);
-
+    background-color: #e9ecef;
   }
 
   h1, h2, h3, h4, h5, h6 {

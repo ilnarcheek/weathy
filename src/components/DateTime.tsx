@@ -13,6 +13,14 @@ const Container = styled.div`
 
 const DateInfo = styled.span`
   font-size: var(--font-size-l);
+
+  @media (max-width: 1024px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 660px) {
+    font-size: 2rem;
+  }
 `;
 
 export default function DateTime() {

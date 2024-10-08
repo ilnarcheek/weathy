@@ -55,6 +55,7 @@ export const timezoneSlice = createSlice({
         fetchTimezone.fulfilled.type,
         (state, action: PayloadAction<ITimezone>) => {
           state.timezone = action.payload;
+          state.isLoading = false;
         }
       )
       .addCase(

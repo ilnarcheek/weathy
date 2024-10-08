@@ -7,6 +7,11 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+
+  @media (max-width: 530px) {
+    padding: 0 2rem;
+  }
 `;
 
 const RightSide = styled.div`

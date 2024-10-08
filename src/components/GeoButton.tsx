@@ -10,6 +10,10 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  @media (max-width: 530px) {
+    display: none;
+  }
 `;
 
 export default function GeoButton() {
