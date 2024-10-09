@@ -8,7 +8,7 @@ const StyledForecast = styled.div`
 
   display: grid;
   /* grid-template-rows: 6fr 5fr; */
-  grid-template-rows: min-content 6fr max-content;
+  grid-template-rows: min-content 1fr max-content;
   background-color: var(--light-color);
   border-radius: var(--border-radius-m);
   box-shadow: var(--box-shadov-s);

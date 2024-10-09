@@ -11,12 +11,16 @@ import { mainColor } from "../utils/constants";
 import CustomTooltip from "./CustomTooltip";
 import { filterWeatherData } from "../utils/helpers";
 import styled from "styled-components";
+import { useMemo } from "react";
 
 const ScrollContainer = styled.div`
-  overflow-x: scroll;
-  overflow-y: hidden;
   width: 100%;
   height: 100%;
+
+  @media (max-width: 530px) {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
 `;
 
 const Container = styled.div`
@@ -30,9 +34,12 @@ const Container = styled.div`
 export default function TempGraph() {
   const { weather } = useAppSelector((state) => state.weather);
   const {
-    timezone: { formatted },
+    timezone: { formatted: formattedTimezone },
   } = useAppSelector((state) => state.timezone);
-  const currentTime = new Date(formatted.replace(" ", "T"));
+  const currentTime = useMemo(
+    () => new Date(formattedTimezone.replace(" ", "T")),
+    [formattedTimezone]
+  );
 
   const degFiltered = filterWeatherData(
     weather.hourly.temperature_2m,

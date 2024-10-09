@@ -19,7 +19,8 @@ export function WindDirection(
   fullLabel: boolean = false
 ): string {
   switch (true) {
-    case direction >= 337.5 || direction < 22.5:
+    case (direction >= 337.5 && direction <= 360) ||
+      (direction < 22.5 && direction >= 0):
       return fullLabel ? "Северный" : "С";
     case direction >= 22.5 && direction < 67.5:
       return fullLabel ? "Северо-восточный" : "СВ";
@@ -45,7 +46,7 @@ export function filterWeatherData(
   timeArr: string[],
   currentTime: Date
 ): number[] {
-  return arr.filter((data, i) => {
-    if (new Date(timeArr[i]).getTime() > currentTime.getTime()) return data;
-  });
+  return arr.filter(
+    (_data, i) => new Date(timeArr[i]).getTime() > currentTime.getTime()
+  );
 }

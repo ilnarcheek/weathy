@@ -26,7 +26,7 @@ const Container = styled.div`
 
   @media (max-width: 530px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 0.8fr 0.7fr 1.5fr;
+    grid-template-rows: 1fr 0.6fr 0.7fr 1.5fr;
   }
 `;
 

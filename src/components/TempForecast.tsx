@@ -6,7 +6,12 @@ import { DayOfWeek } from "../utils/helpers.ts";
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  overflow-x: scroll;
+
+  @media (max-width: 530px) {
+    margin-top: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
 `;
 
 const StyledTempForecast = styled.div`
@@ -15,6 +20,7 @@ const StyledTempForecast = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 2rem;
+  padding-bottom: 1rem;
 
   width: 100%;
   height: 100%;

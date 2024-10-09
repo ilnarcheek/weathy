@@ -11,7 +11,7 @@ interface SearchState {
   error: string | null;
 }
 
-const initialState: SearchState = {
+export const initialState: SearchState = {
   query: "",
   results: {
     suggestions: [],

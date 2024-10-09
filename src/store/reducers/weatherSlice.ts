@@ -69,14 +69,12 @@ export const weatherSlice = createSlice({
     builder
       .addCase(fetchWeather.pending.type, (state) => {
         state.isLoading = true;
-        console.log("start loading");
       })
       .addCase(
         fetchWeather.fulfilled.type,
         (state, action: PayloadAction<IWeather>) => {
           state.isLoading = false;
           state.weather = action.payload;
-          console.log("finish loading");
         }
       )
       .addCase(
